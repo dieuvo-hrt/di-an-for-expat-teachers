@@ -117,6 +117,31 @@
   .route-stop .time{font-size:13px; color:var(--ink-soft); margin-top:3px;}
   .route-stop .city{font-family:'Montserrat'; font-weight:700; font-size:15px; color:var(--ink);}
 
+  /* ---------- SNAPSHOT SUMMARY TABLE ---------- */
+  .snapshot{padding:0 0 8px;}
+  .snap-table{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    overflow:hidden;
+  }
+  .snap-row{
+    display:grid; grid-template-columns:200px 1fr; gap:24px; align-items:center;
+    padding:18px 28px; border-top:1px solid var(--line);
+  }
+  .snap-row:first-child{border-top:none;}
+  .snap-label{font-size:13px; font-weight:700; color:var(--blue-deep);}
+  .snap-value-wrap{display:flex; flex-direction:column; gap:8px;}
+  .snap-value{font-size:14px; color:var(--ink);}
+  .snap-bar{height:7px; border-radius:999px; background:var(--bg-alt); position:relative; overflow:hidden; max-width:320px;}
+  .snap-bar .fill{position:absolute; top:0; bottom:0; left:0; background:var(--blue); border-radius:999px;}
+  .snap-bar.range .fill{background:var(--red); opacity:0.85;}
+  .snap-foot{
+    margin-top:14px; font-size:12.5px; color:var(--ink-soft); font-family:'IBM Plex Mono';
+    padding:0 4px;
+  }
+  @media (max-width:760px){
+    .snap-row{grid-template-columns:1fr; gap:8px;}
+  }
+
   /* ---------- SECTION HEADERS ---------- */
   .section-head{max-width:620px; margin-bottom:48px;}
   .section-head .eyebrow{margin-bottom:14px;}
@@ -308,6 +333,46 @@
   </div>
 </header>
 
+<section class="snapshot wrap tight">
+  <div class="snap-table">
+    <div class="snap-row">
+      <div class="snap-label">Commute to D1</div>
+      <div class="snap-value-wrap">
+        <div class="snap-value">20–90 min — train is fastest, motorbike is slowest</div>
+        <div class="snap-bar range"><div class="fill" style="width:75%"></div></div>
+      </div>
+    </div>
+    <div class="snap-row">
+      <div class="snap-label">Cost of living</div>
+      <div class="snap-value-wrap">
+        <div class="snap-value">10–15% lower than central HCMC overall</div>
+        <div class="snap-bar"><div class="fill" style="width:87%"></div></div>
+      </div>
+    </div>
+    <div class="snap-row">
+      <div class="snap-label">Typical rent</div>
+      <div class="snap-value-wrap"><div class="snap-value">5.5–8.5 million VND/month, often furnished</div></div>
+    </div>
+    <div class="snap-row">
+      <div class="snap-label">Housing</div>
+      <div class="snap-value-wrap"><div class="snap-value">Studios &amp; 2-bedroom apartments widely available; many with gym, pool, security</div></div>
+    </div>
+    <div class="snap-row">
+      <div class="snap-label">Expat community</div>
+      <div class="snap-value-wrap"><div class="snap-value">Small, but set inside a diverse international teaching team</div></div>
+    </div>
+    <div class="snap-row">
+      <div class="snap-label">Local pace</div>
+      <div class="snap-value-wrap"><div class="snap-value">Busy and energetic by day, calm and quiet by evening</div></div>
+    </div>
+    <div class="snap-row">
+      <div class="snap-label">VUS support</div>
+      <div class="snap-value-wrap"><div class="snap-value">Buddy Program · accommodation guidance · temporary hotel on arrival</div></div>
+    </div>
+  </div>
+  <div class="snap-foot">Bars shown only where the comparison is measurable (commute time, cost). Other rows describe fit, not rank.</div>
+</section>
+
 <!-- OVERVIEW -->
 <section id="overview">
   <div class="wrap">
@@ -371,39 +436,39 @@
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Daily Life</span>
-      <h2>Your 8–5, and your 5–9</h2>
-      <p>What teaching looks like in Dĩ An — and what's waiting for you once the last class ends.</p>
+      <h2>Your weekdays, and your weekends</h2>
+      <p>VUS is a private language center — most classes run on weekday evenings and across full weekend days. Here's how that actually shapes a week in Dĩ An.</p>
     </div>
 
     <div class="day-split">
       <div class="day-block">
-        <h3>Your 8–5</h3>
-        <div class="big">Teaching in Dĩ An</div>
-        <p class="sub">A short, predictable commute either way — most teachers are home within 30–45 minutes of their last class, with motorbikes the most common way to get around.</p>
+        <h3>Your weekdays</h3>
+        <div class="big">Free mornings, teaching evenings</div>
+        <p class="sub">Daytime is yours — errands, rest, or exploring — before a short commute to teach as the city winds down for the evening.</p>
         <div class="info-grid">
           <div class="info-card">
-            <div class="h">Getting around</div>
+            <div class="h">Before class</div>
             <ul>
+              <li>Daytime hours are free for rest, errands, or local exploring</li>
               <li>Outer areas: wider roads, easy to navigate</li>
-              <li>Inner areas: more truck traffic, extra care needed</li>
               <li>Ride-hailing apps work well while settling in</li>
             </ul>
           </div>
           <div class="info-card">
-            <div class="h">Healthcare</div>
+            <div class="h">Evening commute &amp; care</div>
             <ul>
-              <li>Local hospitals &amp; clinics throughout Dĩ An</li>
-              <li>International hospitals nearby in Thủ Đức, Thuận An, Thủ Dầu Một</li>
-              <li>Pharmacies widely available</li>
+              <li>Motorbikes are the most common way to get around</li>
+              <li>Inner areas: more truck traffic, extra caution after dark</li>
+              <li>Local hospitals, clinics &amp; pharmacies throughout Dĩ An; international hospitals nearby in Thủ Đức, Thuận An, Thủ Dầu Một</li>
             </ul>
           </div>
         </div>
       </div>
 
       <div class="day-block">
-        <h3>Your 5–9</h3>
-        <div class="big">Living local after class</div>
-        <p class="sub">Quieter than central HCMC, but never short on the essentials — and a malls-and-markets mix that covers most of what you'll need.</p>
+        <h3>Your weekends</h3>
+        <div class="big">Full teaching days, then local life</div>
+        <p class="sub">Weekends are typically full teaching days at a private center — but the same quiet, local rhythm is waiting once the last class ends.</p>
         <div class="info-grid">
           <div class="info-card">
             <div class="h">Food &amp; cafés</div>
@@ -414,7 +479,7 @@
             </ul>
           </div>
           <div class="info-card">
-            <div class="h">Evenings &amp; weekends</div>
+            <div class="h">Once classes end</div>
             <ul>
               <li>Quieter nightlife — local beer gardens, BBQ, karaoke</li>
               <li>Spacious gyms, football &amp; pickleball courts</li>
